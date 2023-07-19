@@ -12,7 +12,7 @@ const ImageList = () => {
   const fetchDriveImages = async () => {
     try {
       const folderId = '1_qOJ0z3kI_e2IJq4X6HqF0T1ROBESygS'; // Replace with your folder ID
-      const apiUrl = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=AIzaSyCk-BioE877Fskjmn289MnLEDL6sDiOSgM`; // Replace with your API key
+      const apiUrl = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=`; // Replace with your API key
 
       const response = await axios.get(apiUrl);
       const files = response.data.files;
