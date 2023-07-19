@@ -1,0 +1,11 @@
+.drive-images{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-box{ 
+    margin-bottom: 20px; 
+    padding: 5px;
+    border: 2px solid grey;
+    margin: 10px; 
+}
