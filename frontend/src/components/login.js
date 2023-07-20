@@ -4,13 +4,10 @@ import axios from 'axios';
 import "./login.css";
 import GoogleLoginButton from './google';
 
-const API_BASE_URL = 'http://127.0.0.1:8000/api/';
-
 const Login = ({setLoggedIn}) => {
   const history = useHistory();
   const signuppage = () => {
     history.push("/signup");
-    console.log("Hello");
   }
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -20,7 +17,7 @@ const Login = ({setLoggedIn}) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${API_BASE_URL}login/`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}login/`, {
         username,
         password,
       });

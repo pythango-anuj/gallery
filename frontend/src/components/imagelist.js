@@ -12,8 +12,8 @@ const ImageList = () => {
   const fetchDriveImages = async () => {
     try {
       const folderId = '1_qOJ0z3kI_e2IJq4X6HqF0T1ROBESygS';
-      const Gallery_Api_Key = prcess.env.GALLARY_API_KEY;
-      const apiUrl = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key='${Gallery_Api_Key}'`; // Replace with your API key
+      const apiKey = process.env.REACT_APP_GALLERY_API_KEY;
+      const apiUrl = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}`; // Replace with your API key
 
       const response = await axios.get(apiUrl);
       const files = response.data.files;
@@ -26,9 +26,6 @@ const ImageList = () => {
         }
       }
       setDriveImages(images); // Update the state with fetched Drive image URLs
-      console.log(driveImages);
-      console.log(response);
-      console.log(files);
     } catch (error) {
       console.error(error); // Handle error
     }

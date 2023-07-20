@@ -4,8 +4,6 @@ import axios from 'axios';
 import "./signup.css";
 import GoogleLoginButton from './google';
 
-const API_BASE_URL = 'http://127.0.0.1:8000/api/';
-
 const SignUp = ({setLoggedIn}) => {
   const history = useHistory();
   const [username, setUsername] = useState('');
@@ -16,7 +14,7 @@ const SignUp = ({setLoggedIn}) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${API_BASE_URL}register/`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}register/`, {
         username,
         password,
       });

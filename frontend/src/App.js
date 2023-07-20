@@ -7,8 +7,6 @@ import axios from 'axios';
 import "./App.css";
 import logo from "./fplogo.png";
 
-const API_BASE_URL = 'http://127.0.0.1:8000/api/';
-
 
 const Logout = ({ handleLogout }) => {
   const history = useHistory();
@@ -34,7 +32,7 @@ const App = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post(`${API_BASE_URL}logout/`);
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}logout/`);
       console.log(response.data); // Handle successful logout
       setLoggedIn(false); // Update loggedIn state
     } catch (error) {
